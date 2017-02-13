@@ -1,0 +1,11 @@
+mpirun: ERROR: /short/v45/lxy581/mom6/bin/MOM6-nodiff does not exist
+--------------------------------------------------------------------------
+mpirun was unable to launch the specified application as it could not access
+or execute an executable:
+
+Executable: /short/v45/lxy581/mom6/bin/MOM6-nodiff
+Node: r205
+
+while attempting to start process rank 0.
+--------------------------------------------------------------------------
+256 total processes failed to start

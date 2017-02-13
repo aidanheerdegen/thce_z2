@@ -1,0 +1,24 @@
+ncpus: 500
+mem: 512GB
+#walltime: 07:00:00
+walltime: 04:00:00
+jobname: thce_z2_control
+project: v45
+queue: express
+
+model: mom6
+shortpath: /short/v45
+exe: MOM6-nodiff
+input: thce_z2
+
+collate: False
+
+mpi:
+    module: openmpi/1.8.8
+    #module: intel-mpi/5.1.0.079
+
+#mpiP: True
+#ipm: 2.0.2
+#itac: 9.0.3.051
+
+#mpirun: -trace

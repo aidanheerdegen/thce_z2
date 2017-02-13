@@ -1,0 +1,173 @@
+NIHALO = 3
+NJHALO = 3
+NIGLOBAL = 160
+NJGLOBAL = 800
+LAYOUT = 10, 50
+IO_LAYOUT = 1, 1
+
+NK = 72
+
+THICKNESSDIFFUSE = False
+THICKNESSDIFFUSE_FIRST = True
+DT = 1200.0
+DT_THERM = 7200.0
+MIN_Z_DIAG_INTERVAL = 2.16E+04
+DTBT_RESET_PERIOD = 0.0
+FRAZIL = True
+BOUND_SALINITY = True
+C_P = 3900.0 ! heat capacity
+SAVE_INITIAL_CONDS = True
+
+EQN_OF_STATE = "LINEAR"
+RHO_T0_S0 = 1010.3 ! density at T=0, S=0
+DRHO_DT = -0.21    ! density change with temp
+DRHO_DS = 0.77     ! density change with salin
+
+USE_IDEAL_AGE_TRACER = True
+
+INPUTDIR = "INPUT"
+T_REF = 10.0
+TS_RANGE_T_LIGHT = 32.0
+TS_RANGE_T_DENSE = -2.0
+S_REF = 35.0
+DENSITY_RANGE = 2.0
+!COORD_CONFIG = "linear"
+!COORD_CONFIG = "ts_range" ! init temp and salt to 10C and 35psu
+COORD_CONFIG = "file"
+COORD_FILE = "coord.nc"
+THICKNESS_CONFIG = "coord" ! define layer thicknesses from ale coord
+TS_CONFIG = "fit" ! find temperatures consistent with layer densities and S_REF
+
+GRID_CONFIG = "mercator"
+SOUTHLAT = -70
+LENLAT = 140 ! I don't think this is actually used on an isotropic grid
+WESTLON = 0
+LENLON = 40
+ISOTROPIC = True
+TOPO_CONFIG = "file"
+TOPO_FILE = "topog.nc"
+MAXIMUM_DEPTH = 4000.0
+MINIMUM_DEPTH = 0.5
+
+USE_MEKE = False
+
+USE_VARIABLE_MIXING = False
+RESOLN_SCALED_KH = True
+KHTH_SLOPE_CFF = 0.25
+KHTR_SLOPE_CFF = 0.25
+VARMIX_KTOP = 6
+VISBECK_L_SCALE = 3.0E+04
+
+ETA_TOLERANCE = 1.0E-06
+VELOCITY_TOLERANCE = 1.0E-04
+BOUND_CORIOLIS = True
+
+MASS_WEIGHT_IN_PRESSURE_GRADIENT = True
+
+LAPLACIAN = False
+KH_VEL_SCALE = 0.01
+!AH_VEL_SCALE = 0.05
+SMAGORINSKY_AH = False
+SMAG_BI_CONST = 0.06
+AH = 1e11
+
+CHANNEL_DRAG = False ! free slip sides in mitgcm
+!DYNAMIC_VISCOUS_ML = True
+U_TRUNC_FILE = "U_velocity_truncations"
+V_TRUNC_FILE = "V_velocity_truncations"
+KV = 1.0E-04
+HBBL = 10.0
+MAXVEL = 6.0
+
+ML_USE_OMEGA = True
+DRAG_BG_VEL = 0.1
+BBL_USE_EOS = True
+BBL_THICK_MIN = 0.1
+
+BOUND_BT_CORRECTION = True
+BT_PROJECT_VELOCITY = True
+BT_THICK_SCHEME = "FROM_BT_CONT"
+BEBT = 0.2
+DTBT = -0.95
+
+KHTH = 10.0
+KHTH_MAX = 900.0
+KD = 1.0E-05
+KD_MAX = 0.1
+KD_MIN = 2.0E-06
+
+USER_CHANGE_DIFFUSIVITY = True
+USER_KD_FACTOR = 19
+USER_KD_DECAY_DIST = 100.0
+
+ML_RADIATION = False
+ML_RAD_COEFF = 0.1
+MSTAR = 0.3
+TKE_DECAY = 10.0
+BBL_MIXING_AS_MAX = False
+USE_LOTW_BBL_DIFFUSIVITY = True
+HENYEY_IGW_BACKGROUND = False
+N2_FLOOR_IOMEGA2 = 0.0
+INT_TIDE_DISSIPATION = False
+
+USE_JACKSON_PARAM = False
+MAX_RINO_IT = 25
+
+USE_KPP = False
+KPP%
+PASSIVE = True
+%KPP
+
+!USE_CONVECTION = True
+BOTTOMDRAGLAW = True
+
+MAX_ENT_IT = 20
+TOLERANCE_ENT = 1.0E-05
+
+BULK_RI_ML = 0.05
+HMIX_MIN = 2.0
+
+KHTR = 10.0
+KHTR_MIN = 50.0
+KHTR_MAX = 900.0
+KHTR_PASSIVITY_COEFF = 3.0
+
+BUOY_CONFIG = "file"
+ARCHAIC_OMIP_FORCING_FILE = False
+LONGWAVE_FILE = "forcing.nc"        ! longwave heat flux, "LW"
+SHORTWAVE_FILE = "forcing.nc"       ! shortwave heat flux, "SW"
+EVAPORATION_FILE = "forcing.nc"     ! evaporative flux, "evap"
+LATENTHEAT_FILE = "forcing.nc"      ! latent heat flux, "latent"
+SENSIBLEHEAT_FILE = "forcing.nc"    ! sensible heat flux, "sensible"
+RAIN_FILE = "forcing.nc"            ! liquid precip, "liq_precip"
+SNOW_FILE = "forcing.nc"            ! frozen precip, "froz_precip"
+RUNOFF_FILE = "forcing.nc"          ! runoff, "liq_runoff" and "froz_runoff"
+SSTRESTORE_FILE = "forcing.nc"      ! SST restoring, "SST"
+SALINITYRESTORE_FILE = "forcing.nc" ! SSS restoring, "SSS"
+WIND_CONFIG = "file"
+WIND_FILE = "forcing.nc"
+WINDSTRESS_X_VAR = "taux"
+WINDSTRESS_Y_VAR = "tauy"
+WINDSTRESS_STAGGER = "A"
+RESTOREBUOY = True
+FLUXCONST = 0.5
+
+MAXTRUNC = 5000
+MAXCPU = 2.88E+04
+
+DT_FORCING = 7200.0
+RESTART_CONTROL = 3
+RESTINT = 365.0
+ENERGYSAVEDAYS = 0.5
+
+USE_REGRIDDING = True
+BULKMIXEDLAYER = False
+MIXEDLAYER_RESTRAT = False
+REGRIDDING_COORDINATE_MODE = "Z*"
+ALE_COORDINATE_CONFIG = "FILE:vgrid.nc,dz"
+HMIX_FIXED = 0.5
+CFL_TRUNCATE_RAMP_TIME = 7200.
+
+DIAG_REMAP_Z_GRID_DEF = "FILE:vgrid.nc,z"
+Z_OUTPUT_GRID_FILE = "vgrid.nc"
+WRITE_GEOM = 2

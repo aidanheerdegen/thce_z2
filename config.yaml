@@ -8,7 +8,7 @@ queue: express
 
 model: mom6
 shortpath: /short/v45
-exe: MOM6-nodiff
+exe: MOM6
 input: thce_z2
 
 collate: False

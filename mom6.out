@@ -1,11 +1,35 @@
-mpirun: ERROR: /short/v45/lxy581/mom6/bin/MOM6-nodiff does not exist
---------------------------------------------------------------------------
-mpirun was unable to launch the specified application as it could not access
-or execute an executable:
+mpirun: INFO: switching to OpenMPI runtime version 1.10.2
+NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to    32768.
+ &MPP_IO_NML
+ HEADER_BUFFER_VAL       =       16384,
+ GLOBAL_FIELD_ON_ROOT_PE = T,
+ IO_CLOCKS_ON    = F,
+ SHUFFLE =           1,
+ DEFLATE_LEVEL   =           5
+ /
+NOTE from PE     0: MPP_IO_SET_STACK_SIZE: stack size set to     131072.
+NOTE from PE     0: MPP_DOMAINS_SET_STACK_SIZE: stack size set to  1200000.
+NOTE from PE     0: ======== Model being driven by MOM_driver ========
+NOTE from PE     0: callTree: o Program MOM_main, MOM_driver.F90
+ &OCEAN_SOLO_NML
+ DATE_INIT       = 3*1, 3*0,
+ CALENDAR        = julian          ,
+ MONTHS  =           0,
+ DAYS    =           2,
+ HOURS   =           0,
+ MINUTES =           0,
+ SECONDS =           0
+ /
+NOTE from PE     0: open_param_file: MOM_input has been opened successfully.
+NOTE from PE     0: open_param_file: MOM_override has been opened successfully.
 
-Executable: /short/v45/lxy581/mom6/bin/MOM6-nodiff
-Node: r205
+FATAL from PE     0: MOM_obsolete_params: DIAG_REMAP_Z_GRID_DEF is an obsolete run-time flag, and should not be used. Use NUM_DIAG_COORDS, DIAG_COORDS and DIAG_COORD_DEF_Z
 
-while attempting to start process rank 0.
 --------------------------------------------------------------------------
-256 total processes failed to start
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD 
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------

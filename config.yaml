@@ -22,3 +22,5 @@ mpi:
 #itac: 9.0.3.051
 
 #mpirun: -trace
+
+debug: true

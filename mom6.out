@@ -22,14 +22,27 @@ NOTE from PE     0: callTree: o Program MOM_main, MOM_driver.F90
  /
 NOTE from PE     0: open_param_file: MOM_input has been opened successfully.
 NOTE from PE     0: open_param_file: MOM_override has been opened successfully.
-
-FATAL from PE     0: MOM_obsolete_params: DIAG_REMAP_Z_GRID_DEF is an obsolete run-time flag, and should not be used. Use NUM_DIAG_COORDS, DIAG_COORDS and DIAG_COORD_DEF_Z
-
+ MOM domain decomposition
+whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+  X-AXIS =   16  16  16  16  16  16  16  16  16  16
+  Y-AXIS =   16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16
+             16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16
+             16  16
+NOTE from PE     0: diag_manager_mod::diag_manager_init: prepend_date only supported when diag_manager_init is called with time_init present.
+ MOM domain decomposition
+whalo =    3, ehalo =    3, shalo =    3, nhalo =    3
+  X-AXIS =   16  16  16  16  16  16  16  16  16  16
+  Y-AXIS =   16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16
+             16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16  16
+             16  16
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
 --------------------------------------------------------------------------
-MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD 
-with errorcode 1.
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
 
-NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
-You may or may not see output from other processes, depending on
-exactly when Open MPI kills them.
+  Process name: [[37721,1],32]
+  Exit code:    66
 --------------------------------------------------------------------------
